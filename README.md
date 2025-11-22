@@ -11,7 +11,7 @@ This is a minimal implementation of the RAG model for question answering.
 1) Download and install MiniConda from [here](https://docs.anaconda.com/free/miniconda/#quick-command-line-install)
 2) Create a new environment using the following command:
 ```bash
-$ conda create -n mini-rag python=3.10
+$ conda create -n mini-rag python=3.11
 ```
 3) Activate the environment:
 ```bash
@@ -37,6 +37,14 @@ $ pip install -r requirements.txt
 ```bash
 $ cp .env.example .env
 ```
+
+### Run Docker Compose Services
+
+```bash
+$ cd docker
+$ cp .env.example .env
+```
+- update`.env` with your credentials 
 
 
 ### Run FastApi Server
