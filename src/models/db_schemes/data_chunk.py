@@ -11,6 +11,7 @@ class data_chunk(BaseModel):
     chunk_order:int=Field(...,gt=0)
     chunk_metadata:dict
     chunk_project_id: ObjectId
+    chunk_asset_id: ObjectId
     
 
     class Config: # to ignore any un know data type like 'ObjectId'
