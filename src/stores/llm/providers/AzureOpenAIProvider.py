@@ -3,7 +3,7 @@ from ..LLMEnums import OpenAIEnums
 from openai import AzureOpenAI
 import logging
 
-class OpenAIProvider(LLMInterface):
+class AzureOpenAIProvider(LLMInterface):
 
     def __init__(self, api_key: str,azure_endpoint: str,api_version: str,
                 default_input_max_characters: int = 1000,
@@ -28,8 +28,8 @@ class OpenAIProvider(LLMInterface):
 
         self.client = AzureOpenAI(
             api_key=self.api_key,
-            azure_endpoint=self.azure_endpoint,
-            api_version=self.api_version
+            endpoint=self.azure_endpoint,
+            # api_version=self.api_version
             )
         
         self.logger = logging.getLogger(__name__)
@@ -64,7 +64,7 @@ class OpenAIProvider(LLMInterface):
         )
 
 
-        response =self.client.chat.complations.create(
+        response =self.client.chat.completions.create(
             model=self.generation_model_id,
             messages=chat_history,
             max_tokens=max_output_tokens,
